@@ -49,6 +49,12 @@ public class EmployeeDAOImpl implements EmployeeDAO{
         return employee;
     }
 
+    @Override
+    public Employee updateEmployeeMail(int id, String mail) {
+        Employee employee =  entityManager.find(Employee.class,id);
+        employee.setEmail(mail);
+       return entityManager.merge(employee);
+    }
 
 
 }

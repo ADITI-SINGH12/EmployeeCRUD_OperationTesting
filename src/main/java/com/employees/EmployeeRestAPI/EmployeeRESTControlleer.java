@@ -24,7 +24,7 @@ public class EmployeeRESTControlleer {
     }
     @GetMapping("/employee/{id}")
     public Employee findEmployeebyID(@PathVariable int id){
-        if(!daoService.findAll().contains(id)|| id < 0){
+        if(id < 0){
             throw new EmployeeNotFoundException("This current Employee ID is not available");
         }
         return daoService.employeeByID(id);

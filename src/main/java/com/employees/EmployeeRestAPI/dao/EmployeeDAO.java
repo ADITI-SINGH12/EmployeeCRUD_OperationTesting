@@ -9,4 +9,5 @@ public interface EmployeeDAO {
     public List<Employee> showAllEmployee();
     public Employee CreateNewEmployee(Employee employee);
     public Employee deleteEmployee(int id);
+    public Employee updateEmployeeMail(int id,String mail);
 }

@@ -72,7 +72,7 @@ public class EmployeeRESTControllerTest {
     @Test
     public void findEmployeebyIDTest_failed() throws Exception {
         when(daoService.findAll()).thenReturn(employeeList);
-        mockMvc.perform(get("/api/employee/10"))
+        mockMvc.perform(get("/api/employee/-1"))
                 .andExpect(status().is4xxClientError());
 
     }
